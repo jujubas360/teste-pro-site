@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz, Física e Energia - Projeto CEP</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts para estilo Crayon / Handwriting -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <header role="banner" class="accessibility-bar">
+        <div class="accessibility-container">
+            <span>Acessibilidade:</span>
+            <button id="toggle-contrast" aria-label="Ativar alto contraste">Alto Contraste</button>
+            <button id="toggle-dyslexia" aria-label="Ativar fonte para dislexia">Fonte Dislexia</button>
+            <button id="toggle-theme" aria-label="Alternar modo claro e escuro">Modo Escuro/Claro</button>
+            <span class="libras-notice">Libras: Estrutura preparada para vídeo</span>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- MENU LATERAL / NAVEGAÇÃO -->
+        <nav role="navigation" aria-label="Menu principal" class="sidebar">
+            <div class="logo-area">
+                <h2>Fisica & Luz</h2>
+                <p>Projeto CEP</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#mapa" class="nav-btn active" data-target="mapa">Mapa do Site</a></li>
+                <li><a href="#efeito" class="nav-btn" data-target="efeito">Efeito Fotovoltaico</a></li>
+                <li><a href="#piscina" class="nav-btn" data-target="piscina">Aquecimento da Piscina</a></li>
+                <li><a href="#sustentabilidade" class="nav-btn" data-target="sustentabilidade">Sustentabilidade</a></li>
+                <li><a href="#tecnociencia" class="nav-btn" data-target="tecnociencia">Física e Tecnociência</a></li>
+                <li><a href="#robotica" class="nav-btn" data-target="robotica">Robótica</a></li>
+                <li><a href="#grupo" class="nav-btn" data-target="grupo">O Grupo</a></li>
+            </ul>
+        </nav>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main role="main" class="content-area">
+
+            <!-- 1. MAPA DO SITE -->
+            <section id="mapa" class="tab-section active">
+                <div class="paper-card">
+                    <h2>Mapa do Site</h2>
+                    <p class="intro-text">Bem-vindo ao nosso ambiente educacional interativo! Este espaço foi desenhado no estilo Crayon para tornar a ciência leve, divertida e acessível a todos.</p>
+                    <div class="grid-map">
+                        <div class="map-item">
+                            <h3>Efeito Fotovoltaico</h3>
+                            <p>Entenda fótons, frequência de corte e conversão de luz em eletricidade.</p>
+                        </div>
+                        <div class="map-item">
+                            <h3>Aquecimento da Piscina</h3>
+                            <p>Conheça a aplicação prática no aquecimento da piscina do CEP usando bombas de calor e painéis.</p>
+                        </div>
+                        <div class="map-item">
+                            <h3>Sustentabilidade</h3>
+                            <p>Analise os impactos ambientais positivos e negativos da energia solar.</p>
+                        </div>
+                        <div class="map-item">
+                            <h3>Física e Tecnociência</h3>
+                            <p>Explore ondas eletromagnéticas e radiação de corpo negro.</p>
+                        </div>
+                        <div class="map-item">
+                            <h3>Robótica</h3>
+                            <p>Descubra os sensores e componentes eletrônicos da montagem do projeto.</p>
+                        </div>
+                        <div class="map-item">
+                            <h3>Equipe</h3>
+                            <p>Conheça os autores e orientadores desta pesquisa.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. EFEITO FOTOVOLTAICO -->
+            <section id="efeito" class="tab-section">
+                <div class="paper-card">
+                    <h2>Efeito Fotovoltaico e Conversão da Luz em Energia</h2>
+                    
+                    <article class="content-block">
+                        <h3>O que são fótons e como sua energia depende da frequência?</h3>
+                        <p>A luz pode ser vista como um feixe de pacotes de energia chamados <strong>fótons</strong>. A energia de cada fóton é diretamente proporcional à sua frequência luminosa, descrita pela relação de Planck ($E = h \cdot f$), onde $h$ é a constante de Planck e $f$ é a frequência.</p>
+                    </article>
+
+                    <article class="content-block">
+                        <h3>O que significa frequência de corte?</h3>
+                        <p>A frequência de corte é o limiar mínimo de frequência que a luz incidente deve ter para conseguir arrancar elétrons da superfície do material semicondutor. Abaixo dessa frequência, por mais intensa que seja a luz, nenhum elétron é liberado.</p>
+                    </article>
+
+                    <article class="content-block">
+                        <h3>Como uma célula fotovoltaica transforma energia luminosa em elétrica?</h3>
+                        <p>Quando os fótons com energia superior à frequência de corte incidem sobre a célula de silício, eles transferem energia para os elétrons, criando um fluxo ordenado de cargas elétricas (corrente elétrica) através do campo elétrico interno da junção PN.</p>
+                    </article>
+
+                    <article class="content-block">
+                        <h3>Aquecimento Solar Térmico vs. Fotovoltaico</h3>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Característica</th>
+                                    <th>Solar Térmico</th>
+                                    <th>Fotovoltaico</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Princípio</td>
+                                    <td>Usa o calor do sol para aquecer fluidos diretamente.</td>
+                                    <td>Converte luz solar em eletricidade por efeito fotoelétrico.</td>
+                                </tr>
+                                <tr>
+                                    <td>Aplicação Principal</td>
+                                    <td>Aquecimento de água para banhos e piscinas.</td>
+                                    <td>Geração de energia elétrica para residências e equipamentos.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+
+                    <article class="content-block">
+                        <h3>Simulador Interativo do Fóton</h3>
+                        <div class="simulator-box">
+                            <label for="frequency-slider">Ajustar Frequência da Luz:</label>
+                            <input type="range" id="frequency-slider" min="1" max="10" value="5">
+                            <div id="simulator-output" class="sim-output">Ajuste o controle para testar a emissão de elétrons.</div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 3. AQUECIMENTO DA PISCINA -->
+            <section id="piscina" class="tab-section">
+                <div class="paper-card">
+                    <h2>Aquecimento da Piscina do CEP</h2>
+                    <p>Neste projeto, estudamos uma alternativa altamente eficiente para manter a temperatura ideal na piscina do CEP: o uso de painéis fotovoltaicos alimentando bombas de calor.</p>
+                    
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <h3>1. Captação Solar</h3>
+                            <p>Painéis solares fotovoltaicos convertem a radiação luminosa do sol em energia elétrica limpa.</p>
+                        </div>
+                        <div class="step-card">
+                            <h3>2. Alimentação da Bomba</h3>
+                            <p>A eletricidade gerada alimenta o sistema de bomba de calor, otimizando o consumo energético da rede.</p>
+                        </div>
+                        <div class="step-card">
+                            <h3>3. Troca Térmica</h3>
+                            <p>A bomba de calor transfere energia térmica para a água da piscina com alto rendimento e sustentabilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SUSTENTABILIDADE -->
+            <section id="sustentabilidade" class="tab-section">
+                <div class="paper-card">
+                    <h2>Sustentabilidade e Conscientização Ambiental</h2>
+                    <p>A transição energética é fundamental para reduzir a pegada de carbono e preservar os recursos naturais do planeta.</p>
+                    
+                    <div class="pros-cons">
+                        <div class="pc-box positive">
+                            <h3>Impactos Positivos (Com Painéis)</h3>
+                            <ul>
+                                <li>Redução drástica na emissão de gases de efeito estufa.</li>
+                                <li>Baixo custo de manutenção após a instalação.</li>
+                                <li>Uso de uma fonte de energia limpa, renovável e inesgotável.</li>
+                            </ul>
+                        </div>
+                        <div class="pc-box negative">
+                            <h3>Impactos Negativos / Desafios (Sem Planejamento)</h3>
+                            <ul>
+                                <li>Descarte adequado de materiais eletrônicos e silício no fim da vida útil.</li>
+                                <li>Impacto visual e ocupação de espaço físico.</li>
+                                <li>Dependência das condições climáticas e intermitência solar.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. FÍSICA E TECNOCIÊNCIA -->
+            <section id="tecnociencia" class="tab-section">
+                <div class="paper-card">
+                    <h2>Física e Tecnociência</h2>
+                    
+                    <article class="content-block">
+                        <h3>Ondas Eletromagnéticas</h3>
+                        <p>A luz viaja pelo espaço na forma de ondas eletromagnéticas, compostas por campos elétricos e magnéticos oscilantes perpendiculares entre si. O espectro visível é apenas uma pequena fração dessa grande família de ondas.</p>
+                    </article>
+
+                    <article class="content-block">
+                        <h3>Radiação do Corpo Negro</h3>
+                        <p>Todo corpo aquecido emite radiação térmica. O Sol comporta-se de maneira muito próxima a um corpo negro ideal, emitindo radiação distribuída em vários comprimentos de onda, com pico na faixa da luz visível.</p>
+                    </article>
+
+                    <article class="content-block">
+                        <h3>O Efeito Fotoelétrico</h3>
+                        <p>Consolidado por Albert Einstein em 1905, o efeito fotoelétrico provou a natureza corpuscular da luz, revolucionando a física moderna e abrindo caminho para a era dos semicondutores.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 6. ROBÓTICA -->
+            <section id="robotica" class="tab-section">
+                <div class="paper-card">
+                    <h2>Robótica e Automação do Projeto</h2>
+                    <p>Para monitorar e automatizar o sistema de aquecimento e captação, utilizamos um conjunto de sensores e microcontroladores.</p>
+                    
+                    <ul class="robotics-list">
+                        <li><strong>Sensor de Luminosidade (LDR):</strong> Mede a intensidade da luz solar incidente em tempo real.</li>
+                        <li><strong>Sensor de Temperatura (DS18B20):</strong> Monitora a temperatura da água da piscina e dos coletores.</li>
+                        <li><strong>Microcontrolador (Arduino / ESP32):</strong> Processa os dados dos sensores e aciona o sistema de controle da bomba.</li>
+                        <li><strong>Relés e Atuadores:</strong> Chaves eletrônicas que ligam ou desligam o circuito elétrico com segurança.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 7. O GRUPO / CRÉDITOS -->
+            <section id="grupo" class="tab-section">
+                <div class="paper-card">
+                    <h2>Equipe do Projeto</h2>
+                    <div class="credits-grid">
+                        <div class="credit-card">
+                            <h3>Integrantes</h3>
+                            <ul>
+                                <li>Camilly (03)</li>
+                                <li>Gloria (09)</li>
+                                <li>Jiayu (10)</li>
+                                <li>Julia E. (12)</li>
+                            </ul>
+                            <p class="turma-tag">Turma: 2M</p>
+                        </div>
+                        <div class="credit-card">
+                            <h3>Professores Orientadores</h3>
+                            <ul>
+                                <li>Paulo (Física e Tecnociência)</li>
+                                <li>Levi (Robótica)</li>
+                                <li>Angelo (Programação)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
