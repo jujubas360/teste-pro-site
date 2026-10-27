@@ -1,76 +1,81 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Navegação por Abas (Menus)
-    const navButtons = document.querySelectorAll(".nav-btn");
-    const sections = document.querySelectorAll(".tab-section");
+document.addEventListener('DOMContentLoaded', () => {
+    // Menu Responsivo Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
 
-    navButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-            const targetId = button.getAttribute("data-target");
-
-            // Remover classe active de todos
-            navButtons.forEach(btn => btn.classList.remove("active"));
-            sections.forEach(sec => sec.classList.remove("active"));
-
-            // Adicionar classe active ao selecionado
-            button.classList.add("active");
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.classList.add("active");
-            }
-            
-            // Foco para acessibilidade de teclado
-            targetSection.setAttribute("tabindex", "-1");
-            targetSection.focus();
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+            navToggle.setAttribute('aria-expanded', !expanded);
+            navList.classList.toggle('active');
         });
+    }
+
+    // Alternar Alto Contraste
+    const btnContrast = document.getElementById('btn-contrast');
+    btnContrast.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
     });
 
-    // Simulador Interativo do Efeito Fotoelétrico / Frequência
-    const freqSlider = document.getElementById("frequency-slider");
-    const simOutput = document.getElementById("simulator-output");
+    // Alternar Fonte para Dislexia
+    const btnDyslexia = document.getElementById('btn-dyslexia');
+    btnDyslexia.addEventListener('click', () => {
+        document.body.classList.toggle('dyslexia-font');
+    });
 
-    if (freqSlider && simOutput) {
-        freqSlider.addEventListener("input", (e) => {
-            const val = parseInt(e.target.value);
-            if (val < 4) {
-                simOutput.textContent = `Frequência ${val}: Abaixo da frequência de corte! Nenhum elétron é liberado.`;
-                simOutput.style.backgroundColor = "#ffcccc";
-            } else if (val >= 4 && val <= 7) {
-                simOutput.textContent = `Frequência ${val}: Frequência adequada! Elétrons começam a ser liberados com energia moderada.`;
-                simOutput.style.backgroundColor = "#ffffcc";
+    // Alternar Modo Claro e Escuro
+    const btnTheme = document.getElementById('btn-theme');
+    btnTheme.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+    });
+
+    // Simulador Interativo do Efeito Fotoelétrico
+    const freqSlider = document.getElementById('freq-slider');
+    const freqVal = document.getElementById('freq-val');
+    const simResult = document.getElementById('sim-result');
+
+    const freqLevels = [
+        { name: "Infravermelho (Baixa Energia)", active: false, desc: "Frequência abaixo do limiar. Nenhum elétron emitido." },
+        { name: "Luz Vermelha", active: false, desc: "Ainda abaixo da frequência de corte para este metal." },
+        { name: "Luz Verde (Frequência de Corte exata)", active: true, desc: "Limite atingido! Primeiros elétrons começam a se desprender." },
+        { name: "Luz Azul", active: true, desc: "Frequência superior ao corte. Elétrons emitidos com energia cinética!" },
+        { name: "Ultravioleta (Alta Energia)", active: true, desc: "Alta frequência! Emissão intensa e elétrons com máxima velocidade." }
+    ];
+
+    if (freqSlider) {
+        freqSlider.addEventListener('input', (e) => {
+            const index = parseInt(e.target.value) - 1;
+            const level = freqLevels[index];
+            freqVal.textContent = level.name;
+            
+            if (level.active) {
+                simResult.innerHTML = `<p><strong>Status:</strong> <span style="color: green;">Sucesso!</span> ${level.desc}</p>`;
             } else {
-                simOutput.textContent = `Frequência ${val}: Alta frequência (ultravioleta)! Elétrons liberados com alta velocidade e energia cinética!`;
-                simOutput.style.backgroundColor = "#ccffcc";
+                simResult.innerHTML = `<p><strong>Status:</strong> <span style="color: red;">Inativo.</span> ${level.desc}</p>`;
             }
         });
     }
 
-    // Botões de Acessibilidade
-    const btnContrast = document.getElementById("toggle-contrast");
-    const btnDyslexia = document.getElementById("toggle-dyslexia");
-    const btnTheme = document.getElementById("toggle-theme");
+    // Navegação suave e destaque de menu ativo
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    if (btnContrast) {
-        btnContrast.addEventListener("click", () => {
-            document.body.classList.toggle("high-contrast");
-        });
-    }
-
-    if (btnDyslexia) {
-        btnDyslexia.addEventListener("click", () => {
-            document.body.classList.toggle("dyslexia-font");
-        });
-    }
-
-    if (btnTheme) {
-        btnTheme.addEventListener("click", () => {
-            const htmlTag = document.documentElement;
-            const currentTheme = htmlTag.getAttribute("data-theme");
-            if (currentTheme === "dark") {
-                htmlTag.setAttribute("data-theme", "light");
-            } else {
-                htmlTag.setAttribute("data-theme", "dark");
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
             }
         });
-    }
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
 });
